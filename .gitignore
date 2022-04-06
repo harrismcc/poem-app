@@ -9,3 +9,10 @@
 
 build/
 .idea/
+
+.env
+.env.*
+
+# Supabase
+**/supabase/.branches
+**/supabase/.temp

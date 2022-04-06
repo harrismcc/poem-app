@@ -365,6 +365,13 @@ module.exports = {
         "no-empty-pattern": 0,
       },
     },
+    /** Disable jsdoc for .d.ts files, rarely used */
+    {
+      files: ["**/*.d.ts"],
+      rules: {
+        "jsdoc/require-jsdoc": 0,
+      },
+    },
     {
       files: ["*.ts"],
       rules: {

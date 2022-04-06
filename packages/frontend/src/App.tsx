@@ -1,23 +1,18 @@
-import { addOne } from "@main/utils";
-import React, { useState } from "react";
+import { TypographyStylesProvider } from "@mantine/core";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-export const App: React.FC = () => {
-  const [count, setCount] = useState(0);
+import { LoginPage, TestPage } from "./pages";
 
-  return (
-    <>
-      <h1>Hello New Project!</h1>
-      This is a new project.
-      <div>
-        <button
-          type="button"
-          onClick={() => setCount((count) => addOne(count))}
-        >
-          count is: {count}
-        </button>
-      </div>
-    </>
-  );
-};
+export const App: React.FC = () => (
+  <TypographyStylesProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TestPage />} />
+        <Route path="login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
+  </TypographyStylesProvider>
+);
 
 export default App;

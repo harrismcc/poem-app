@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-starter",
+  "name": "poem-app",
   "packageManager": "yarn@3.2.0",
   "workspaces": [
     "packages/*"
@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint",
     "fix-ts-refs": "utils-typescript-references --skipRoot",
-    "start": "concurrently \"yarn:frontend\" \"yarn:backend\"",
+    "start": "yarn && concurrently \"supabase start\" \"yarn:frontend\" \"yarn:backend\"",
     "frontend": "yarn workspace @main/frontend dev",
     "backend": "yarn workspace @main/backend start"
   },
